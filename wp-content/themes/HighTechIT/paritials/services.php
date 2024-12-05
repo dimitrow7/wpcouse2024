@@ -36,7 +36,7 @@
                 <?php endwhile;
                 wp_reset_postdata();
             else : ?>
-                <p><?php _e('No services found.', 'softuni'); ?></p>
+                <p><?php _e('Не са намерени услуги.', 'softuni'); ?></p>
             <?php endif; ?>
         </div>
     </div>

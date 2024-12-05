@@ -28,7 +28,7 @@ $latest_posts_query = new WP_Query($latest_posts_args);
                                     </div>
                                 </a>
                             <?php endif; ?>
-                            
+
                             <!-- Category -->
                             <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">
                                 <?php

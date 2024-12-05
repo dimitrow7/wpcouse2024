@@ -43,6 +43,7 @@ function register_services_cpt() {
 		'show_in_rest'          => true, // Enable Gutenberg
 		'rewrite'               => $rewrite,
 		'capability_type'       => 'post',
+		'has_archive'           => true, 
 	);
 	register_post_type( 'cpt_services', $args );
 

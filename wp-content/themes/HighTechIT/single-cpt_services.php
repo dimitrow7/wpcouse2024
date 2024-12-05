@@ -22,11 +22,18 @@ global $post;
 <!-- Service Details Start -->
 <div class="container-fluid py-5 my-5">
     <div class="col-md-6 col-lg-8 mx-auto wow fadeIn" data-wow-delay=".3s" style="max-width: 90%;">
+    <?php $service_like = get_post_meta(get_the_ID(), 'votes', true) ?? 0; ?>
+        <div class="like-container mb-4">
+            <p class="like-text">Имаме хиляди доволни клиенти! Ако си един от тях, натисни бутона, за да ни подкрепиш!</p>
+            <a href="#" class="like btn btn-primary" id="service-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>">
+                ⭐ Доволен клиент (<span class="like-count"><?php echo $service_like; ?></span>)
+            </a>
+        </div>
         <?php
         // Display Service Details
         $service_type = get_post_meta(get_the_ID(), '_service_type', true);
         $start_price = get_post_meta(get_the_ID(), '_start_price', true);
-        $service_like = get_post_meta(get_the_ID(), 'votes', true) ?? 0;
+        
 
         if ($service_type || $start_price) {
             echo '<div class="service-details bg-light p-4 rounded mb-4">';
@@ -42,11 +49,6 @@ global $post;
 
         <div class="service-content">
             <?php the_content(); ?>
-        </div>
-
-
-        <div>
-            <a href="#" class="like" id="service-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>">👍🏻 LIKE (<?php echo $service_like ?>)</a>
         </div>
     </div>
 </div>

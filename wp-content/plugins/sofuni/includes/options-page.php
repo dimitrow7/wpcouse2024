@@ -1,5 +1,5 @@
 <?php
-// Добавяме опции страницата в менюто
+// Добавяме страницата в менюто
 add_action('admin_menu', 'softuni_add_options_page');
 
 function softuni_add_options_page() {
@@ -112,7 +112,7 @@ add_settings_field(
     register_setting('softuni_options_group', 'softuni_phone');
     register_setting('softuni_options_group', 'softuni_address');
     register_setting('softuni_options_group', 'softuni_email');
-    register_setting('softuni_options_group', 'softuni_google_maps');
+    register_setting('softuni_options_group','softuni_google_maps');
     register_setting('softuni_options_group', 'softuni_about_motto');
     register_setting('softuni_options_group', 'softuni_about_description');
     register_setting('softuni_options_group', 'softuni_about_image_1');

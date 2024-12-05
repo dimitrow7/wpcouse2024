@@ -2,9 +2,9 @@
 <div class="container-fluid py-5 mb-5">
     <div class="container">
         <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-            <h5 class="text-primary">Get In Touch</h5>
-            <h1 class="mb-3">Contact for any query</h1>
-            <p class="mb-2">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+            <h5 class="text-primary">КОНТАКТИ</h5>
+            <h1 class="mb-3">Не се колебайте да се свържете с нас</h1>
+            <!-- <p class="mb-2">Не се колебайте да се свържете с нас ...</a>.</p> -->
         </div>
         <div class="contact-detail position-relative p-5">
             <div class="row g-5 mb-5 justify-content-center">
@@ -61,11 +61,11 @@
                 <!-- Google Maps -->
                 <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
                     <div class="p-5 h-100 rounded contact-map">
-                        <?php 
-                        $google_maps_iframe = get_option('softuni_google_maps', ''); 
-                        if (!empty($google_maps_iframe)): 
+                        <?php
+                        $google_maps_iframe = get_option('softuni_google_maps', '');
+                        if (!empty($google_maps_iframe)):
                             echo $google_maps_iframe; // iframe 
-                        else: 
+                        else:
                         ?>
                             <p class="text-muted"><?php _e('Няма зададена Goole Maps локация.', 'softuni'); ?></p>
                         <?php endif; ?>

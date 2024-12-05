@@ -19,24 +19,25 @@ add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_enqueue_scripts()
 {
     // CSS
+    wp_enqueue_style('owl-carousel', get_stylesheet_directory_uri() . '/js/owlcarousel/assets/owl.carousel.min.css', array(), null);
+    wp_enqueue_style('owl-carousel-theme', get_stylesheet_directory_uri() . '/js/owlcarousel/assets/owl.theme.default.min.css', array(), null);
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css', array(), '5.10.0');
     wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css', array(), '1.4.1');
     wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/css/animate.min.css', array(), null);
-    wp_enqueue_style('owl-carousel', get_stylesheet_directory_uri() . '/js/owlcarousel/assets/owl.carousel.min.css', array(), null);
     wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css');
     wp_enqueue_style('custom-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), null);
-
 
     // JS
     wp_enqueue_script('jquery-cdn', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js', array(), '3.6.4', true);
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js', array('jquery-cdn'), '5.0.0', true);
+    wp_enqueue_script('owl-carousel-js', get_stylesheet_directory_uri() . '/js/owlcarousel/owl.carousel.min.js', array('jquery-cdn'), null, true);
     wp_enqueue_script('wow-js', get_stylesheet_directory_uri() . '/js/wow/wow.min.js', array(), null, true);
     wp_enqueue_script('easing-js', get_stylesheet_directory_uri() . '/js/easing/easing.min.js', array(), null, true);
     wp_enqueue_script('waypoints-js', get_stylesheet_directory_uri() . '/js/waypoints/waypoints.min.js', array(), null, true);
-    wp_enqueue_script('owl-carousel-js', get_stylesheet_directory_uri() . '/js/owlcarousel/owl.carousel.min.js', array(), null, true);
-    wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('wow-js'), false, true);
+    wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery-cdn', 'owl-carousel-js'), false, true);
 }
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
+
 
 // Dynamic header
 function dynamic_page_header_styles()
